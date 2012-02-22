@@ -10,22 +10,16 @@ Group:            Sciences/Mathematics
 License:          GPL-2
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_1.7-7.tar.gz
-Requires:         R-stats R-stats R-utils R-graphics R-grDevices R-lattice
-%if %{with bootstrap}
-Requires:         R-coda R-chron R-fts R-its R-lattice R-timeDate R-timeSeries
-Requires:         R-tis
-%else
-Requires:         R-coda R-chron R-DAAG R-fts R-its R-lattice R-mondate
-Requires:         R-strucchange R-timeDate R-timeSeries R-tis R-tseries R-xts
+Requires:         R-stats R-utils R-graphics R-grDevices R-lattice R-coda
+Requires:         R-chron R-fts R-its R-lattice R-timeDate R-timeSeries R-tis
+%if %{without bootstrap}
+Requires:         R-DAAG R-mondate R-strucchange R-tis R-tseries R-xts
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-stats
-BuildRequires:    R-stats R-utils R-graphics R-grDevices R-lattice
-%if %{with bootstrap}
-BuildRequires:    R-coda R-chron R-fts R-its R-lattice R-timeDate R-timeSeries
-BuildRequires:    R-tis
-%else
-BuildRequires:    R-coda R-chron R-DAAG R-fts R-its R-lattice R-mondate
-BuildRequires:    R-strucchange R-timeDate R-timeSeries R-tis R-tseries R-xts 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex
+BuildRequires:    R-stats R-utils R-graphics R-grDevices R-lattice R-coda
+BuildRequires:    R-chron R-fts R-its R-lattice R-timeDate R-timeSeries R-tis
+%if %{without bootstrap}
+BuildRequires:    R-DAAG R-mondate R-strucchange R-tis R-tseries R-xts
 %endif
 %rename R-cran-zoo
 
