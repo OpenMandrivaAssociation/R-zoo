@@ -1,28 +1,31 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  zoo
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
 Version:          1.7_7
-Release:          1
-Summary:          S3 Infrastructure for Regular and Irregular Time Series (Z's ordered observations)
+Release:          2
+Summary:          Regular and Irregular Time Series S3 Infrastructure (Z's ordered observations)
 Group:            Sciences/Mathematics
 License:          GPL-2
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_1.7-7.tar.gz
-Requires:         R-stats 
-Requires:         R-stats R-utils R-graphics R-grDevices R-lattice 
+Requires:         R-stats R-stats R-utils R-graphics R-grDevices R-lattice
 %if %{with bootstrap}
-Requires:         R-coda R-chron R-fts R-its R-lattice R-timeDate R-timeSeries R-tis
+Requires:         R-coda R-chron R-fts R-its R-lattice R-timeDate R-timeSeries
+Requires:         R-tis
 %else
-Requires:         R-coda R-chron R-DAAG R-fts R-its R-lattice R-mondate R-strucchange R-timeDate R-timeSeries R-tis R-tseries R-xts 
+Requires:         R-coda R-chron R-DAAG R-fts R-its R-lattice R-mondate
+Requires:         R-strucchange R-timeDate R-timeSeries R-tis R-tseries R-xts
 %endif
 BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-stats
-BuildRequires:    R-stats R-utils R-graphics R-grDevices R-lattice 
+BuildRequires:    R-stats R-utils R-graphics R-grDevices R-lattice
 %if %{with bootstrap}
-BuildRequires:    R-coda R-chron R-fts R-its R-lattice R-timeDate R-timeSeries R-tis
+BuildRequires:    R-coda R-chron R-fts R-its R-lattice R-timeDate R-timeSeries
+BuildRequires:    R-tis
 %else
-BuildRequires:    R-coda R-chron R-DAAG R-fts R-its R-lattice R-mondate R-strucchange R-timeDate R-timeSeries R-tis R-tseries R-xts 
+BuildRequires:    R-coda R-chron R-DAAG R-fts R-its R-lattice R-mondate
+BuildRequires:    R-strucchange R-timeDate R-timeSeries R-tis R-tseries R-xts 
 %endif
 %rename R-cran-zoo
 
