@@ -3,13 +3,13 @@
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
-Version:          1.7_7
-Release:          2
+Version:          1.7.9
+Release:          1
 Summary:          Regular and Irregular Time Series S3 Infrastructure (Z's ordered observations)
 Group:            Sciences/Mathematics
 License:          GPL-2
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
-Source0:          http://cran.r-project.org/src/contrib/%{packname}_1.7-7.tar.gz
+Source0:          http://cran.r-project.org/src/contrib/zoo_1.7-9.tar.gz
 Requires:         R-stats R-utils R-graphics R-grDevices R-lattice R-coda
 Requires:         R-chron R-fts R-its R-lattice R-timeDate R-timeSeries R-tis
 %if %{without bootstrap}
@@ -60,3 +60,4 @@ rm -f %{buildroot}%{rlibdir}/R.css
 %{rlibdir}/%{packname}/demo
 %{rlibdir}/%{packname}/help
 %{rlibdir}/%{packname}/libs
+
