@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          1.7_7
-Release:          2
+Release:          3
 Summary:          Regular and Irregular Time Series S3 Infrastructure (Z's ordered observations)
 Group:            Sciences/Mathematics
 License:          GPL-2
