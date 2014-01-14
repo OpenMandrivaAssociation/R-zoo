@@ -1,2 +1,4 @@
+removed_sources:
+  zoo_1.7-7.tar.gz: f44f9ba2fd67054e70ba915dfb52c9e18dc44d4f
 sources:
-  "zoo_1.7-7.tar.gz:"	f44f9ba2fd67054e70ba915dfb52c9e18dc44d4f
+  zoo_1.7-10.tar.gz: f211869ff7651ae71fd1b4de4bcb992519695b7a
